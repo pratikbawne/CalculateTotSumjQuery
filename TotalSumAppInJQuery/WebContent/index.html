@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+	  $('tr').each(function()
+		{
+	        var totmarks = 0;
+	        
+	        $(this).find('.subjects').each(function(){
+	        	var marks = $(this).text();
+	        	if(marks.length != 0)
+	        		{
+	        		   totmarks += parseFloat(marks);
+	        		}
+	        });
+	        $(this).find('#TotMarks').html('= '+totmarks);
+		});
+  });
+</script>
+
+<meta charset="ISO-8859-1">
+<title>Addition Page</title>
+</head>
+<body>
+
+<h1>How to calculate Total Sum of all Row Cells in a Table</h1>
+<h2>Using jQuery</h2>
+<hr/>
+<table border = "1">
+ 
+   <thead>
+      <tr>
+         <th>Student Name</th>
+         <th>Maths</th>
+         <th>Physics</th>
+         <th>Computers</th>
+         <th>Total</th>
+      </tr>
+   </thead>
+   
+   <tbody>
+     
+     <tr>
+        <td>Pratik</td>
+        <td class = "subjects">50</td>
+        <td class = "subjects">50</td>
+        <td class = "subjects">50</td>
+        <td id = "TotMarks"></td>
+     </tr>
+          
+      <tr>
+        <td>Nikhil</td>
+        <td class = "subjects">30</td>
+        <td class = "subjects">50</td>
+        <td class = "subjects">20</td>
+        <td id = "TotMarks"></td>
+     </tr>
+     
+     <tr>
+        <td>Bhavik</td>
+        <td class = "subjects">90</td>
+        <td class = "subjects">5</td>
+        <td class = "subjects">20</td>
+        <td id = "TotMarks"></td>
+     </tr>
+     
+   </tbody>
+   
+</table>
+
+</body>
+</html>
